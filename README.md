@@ -3,7 +3,7 @@ I'm currently a game dev tech stream student.
 This will be the place I upload my portfolio and maybe resume in the future.
 
 ## My Portfolio
-- home (my-portfolio/)
+- [home] (my-portfolio/)
 
 
 
