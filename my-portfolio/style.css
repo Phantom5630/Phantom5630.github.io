@@ -71,7 +71,7 @@ div.web-background {
     /*, url('images/player-skill-gif.gif');*/
 }
 
-div.navigation-menu {
+#navigation-menu {
     position: fixed;
     top: 0;
     width: 100%;
@@ -81,18 +81,18 @@ div.navigation-menu {
     z-index: 1;
 }
 
-div.navigation-menu>div {
+#navigation-menu>div {
     position: relative;
 }
 
-div.navigation-menu>div>p {
+#navigation-menu>div>p {
     font-family: kaliber-square;
     font-size: max(min(2.5vw, 40px), 20px);
     padding: max(min(0.25vw, 4px), 2px) max(min(1vw, 16px), 8px) 0;
     color: rgba(0, 0, 0, 0);
 }
 
-div.navigation-menu>div>a {
+#navigation-menu>div>a {
     float: left;
     position: absolute;
     bottom: -1%;
@@ -106,7 +106,7 @@ div.navigation-menu>div>a {
     transition: 0.1s ease-in-out;
 }
 
-div.navigation-menu>div>a:hover {
+#navigation-menu>div>a:hover {
     font-size: max(min(2.5vw, 40px), 20px);
     color: #f3f;
     transition: 0.1s ease-in-out;
@@ -264,7 +264,7 @@ div.self-intro {
     padding: 32px max(32px, 2vw);
     border-radius: 32px;
     margin: 16px;
-    transition: all 0.2s linear;
+    transition: background-color 0.2s ease-in-out;
 }
 
 #experience>div>div:hover {
@@ -299,7 +299,7 @@ div.self-intro {
     background-color: rgba(204, 51, 255, 0.2);
     padding: min(1vw, 16px) min(1vw, 16px) min(0.5vw, 8px);
     border-radius: min(1vw, 16px);
-    transition: background-color 0.2s linear;
+    transition: background-color 0.2s ease-in-out;
 }
 
 #contact>div>a:hover{

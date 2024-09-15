@@ -4,26 +4,204 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repture Reign</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Infamy</title>
+    <link rel="stylesheet" href="../style-subsite.css">
 </head>
 
 <body>
-    <h1>Rapture Reign</h1>
-    <p>rapture reign</p>
+    <!--navigation menu-->
+    <div id="navigation-menu">
+        <div>
+            <p>HOME</p>
+            <a href="../">HOME</a>
+        </div>
+        <div>
+            <p>INTRO</p>
+            <a href="#intro">INTRO</a>
+        </div>
+        <div>
+            <p>MY CONTRIBUTIONS</p>
+            <a href="#my-contributions">MY CONTRIBUTIONS</a>
+        </div>
+        <div>
+            <p>CREDITS</p>
+            <a href="#group">CREDITS</a>
+        </div>
+    </div>
 
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="images/rapture-reign-header.png" alt="rapture reign" />
+    <!--intro-->
+    <div id="intro">
+        <h1>GAME INTRODUCTION</h1>
+        <div>
+            <h2 id="title">INFAMY</h2>
+            <p style="text-align: center;">2D Sidescroll | Strategy | Minigames</p>
+            <a id="cover" href="">
+                <img src="images/infamy-header.png" alt="Infamy header">
+            </a>
+            <p>
+                Play as an unemployed guy, who stream himself doing petty crimes.
+                <br><br>
+                Objective of the game is to meet the given quota of viewers within time limit.
+            </p>
+            <div id="button-container">
+                <a href="">TRY OUT NOW!</a>
+            </div>
+            <ul id="project-to-me">
+                <br>
+                <h3 style="font-size: 1.25em;">Additional Info</h3>
+                <li>Outcome of my GPS1 (Group Project Studio 1) course.</li>
+                <li>My first time officially working with other programmer to make a game.</li>
+            </ul>
         </div>
-        <div class="gallery-item">
-            <img src="images//rounded-square-placeholder.png" alt="round square" />
+    </div>
+
+
+    <!--my contributions-->
+    <div id="my-contributions">
+        <h1>MY CONTRIBUTIONS</h1>
+        <div class="section">
+            <h2>MINIGAMES</h2>
+            <div>
+                <img src="images/minigame-painting.gif" alt="gif showing painting minigame">
+                <h3>Painting Minigame</h3>
+            </div>
+            <div>
+                <img src="images/minigame-pickpocket.gif" alt="gif showing pickpocket minigame">
+                <h3>Pickpocket Minigame</h3>
+            </div>
+            <div>
+                <img src="images/minigame-slash-the-bag.gif" alt="gif showing slash the bag minigame">
+                <h3>Slash The Bag Minigame</h3>
+            </div>
+            <div>
+                <img src="images/minigame-shoplifting.gif" alt="gif showing shoplifting minigame">
+                <h3>Shoplifting Minigame</h3>
+            </div>
+            <ul>
+                <li>All minigmes are played while main gameplay still runs in the background.</li>
+                <li>All the minigames also came out of my quick ideas (except shoplifting one).</li>
+            </ul>
         </div>
-        <div class="gallery-item">
-            <img src="images/rapture-reign-header.png" alt="rapture reign" />
+
+        <div class="section">
+            <h2>TUTORIAL</h2>
+            <div>
+                <img src="images/tutorial-1.gif" alt="gif showing tutoral part 1">
+                <h3>Tutorial Part 1</h3>
+            </div>
+            <div>
+                <img src="images/tutorial-2.gif" alt="gif showing tutoral part 2">
+                <h3>Tutorial Part 2</h3>
+            </div>
+            <ul>
+                <li>Camera will focus on target object when it is mentioned.</li>
+                <li>Some parts will require player to complete certain action to proceed and the dialogue box will
+                    switch to a window after a few seconds.</li>
+                <li>Invisible wall preventing player from exploring before they should do so.</li>
+            </ul>
         </div>
-        <div class="gallery-item">
-            <img src="images//rounded-square-placeholder.png" alt="round square" />
+
+        <div class="section">
+            <h2>EQUIPMENT SYSTEM</h2>
+            <div>
+                <img src="images/equipment-switching.gif" alt="gif showing equipment switching">
+                <h3>Equipment Switching</h3>
+            </div>
+            <ul>
+                <li>Changing clothes only swap the sprite for specific parts.</li>
+                <li>The changes in stats after switching equipment are displayed as the fading part of the bars.</li>
+                <li>Whatever bought or equipped will be carried on throughout the game.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>UPGRADES SYSTEM</h2>
+            <div>
+                <img src="images/upgrades.gif" alt="gif showing upgrades">
+                <h3>Upgrades</h3>
+            </div>
+            <ul>
+                <li>All upgrades will be carried on throughout the game.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>HIDING CONTROL AND MECHANIC</h2>
+            <div>
+                <img src="images/hiding-mechanic.gif" alt="gif showing hiding mechanic">
+                <h3>Hiding Mechanic</h3>
+            </div>
+            <ul>
+                <li>Hide to avoid patrolling cops.</li>
+                <li>Cops can't get you when you're hidden, unless you try to hide while they're watching.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>STREAM CHAT</h2>
+            <div>
+                <img src="images/stream-chat.gif" alt="gif showing in-game stream chat">
+                <h3>In-game Stream Chat</h3>
+            </div>
+            <ul>
+                <li>Viewers will 'chat' while you're doing your job.</li>
+                <li>The viewers' usernames and chat contents are randomized from respective array.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>TRANSITIONS APPLICATION</h2>
+            <div>
+                <img src="images/transition-main.gif" alt="gif showing main transition">
+                <h3>Main Transition</h3>
+            </div>
+            <div>
+                <img src="images/transition-in-game.gif" alt="gif showing in-game transition">
+                <h3>In-game Transition</h3>
+            </div>
+            <ul>
+                <li>Main transition will be played whenever player proceed to next scene.</li>
+                <li>For travelling to streets or stores, in-game transition will be played instead.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--group-->
+    <div id="group">
+        <h1>CREDITS</h1>
+        <div>
+            <div class="table-header">
+                <h2>MEMBER</h2>
+                <h2>ROLE</h2>
+            </div>
+            <div class="member">
+                <p>Tan Pink Herr</p>
+                <p>Tech Lead & Gameplay Programmer</p>
+            </div>
+            <div class="member">
+                <p>Fu Fang Zhe</p>
+                <p>AI Programmer</p>
+            </div>
+            <div class="member">
+                <p>Jefferson Jee Kang Ming</p>
+                <p>Art Lead & Animator</p>
+            </div>
+            <div class="member">
+                <p>Chee Yi Huan</p>
+                <p>Story Artist & Project Lead</p>
+            </div>
+            <div class="member">
+                <p>Aishah Binti Mohamed Muzammil</p>
+                <p>Environment Artist & Project Manager</p>
+            </div>
+            <div class="member">
+                <p>Mirrah Binti Rozli</p>
+                <p>UI Artist</p>
+            </div>
+            <div class="member">
+                <p>Khoo Jun Bin</p>
+                <p>Character Artist</p>
+            </div>
         </div>
     </div>
 
