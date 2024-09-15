@@ -67,7 +67,7 @@ div.web-background {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: radial-gradient(circle, blue, magenta);
+    background-image: radial-gradient(circle, rgb(63,255,191), cyan, rgb(127, 127, 255), magenta);
     /*, url('images/player-skill-gif.gif');*/
 }
 
@@ -292,7 +292,7 @@ div.self-intro {
     margin-top: min(2vw, 32px);
     display: flex;
     justify-content: center;
-    gap: min(2vw, 32px);
+    gap: min(4vw, 64px);
 }
 
 #contact>div>a{
