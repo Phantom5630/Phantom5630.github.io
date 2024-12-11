@@ -7,14 +7,9 @@ html {
     src: url('fonts/Courier Prime Code.ttf');
 }
 
-@font-face {
-    font-family: kaliber-square;
-    src: url('fonts/kalibers.ttf');
-}
-
 body {
     color: #fff;
-    font-family: kaliber-square;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: max(min(2vw, 32px), 16px);
     margin: 0%;
     width: 100%;
@@ -25,14 +20,14 @@ body {
 p {
     color: #fff;
     font-size: 0.9em;
-    font-family: courier-prime-code;
+    font-family: courier-prime-code, 'Courier New', Courier, monospace;
     margin: 0;
 }
 
 h1,
 h2 {
     color: #fff;
-    font-weight: normal;
+    font-weight: bold;
     margin: 0%;
 }
 
@@ -47,14 +42,14 @@ h2 {
 
 h3 {
     margin: 0px;
-    color: rgb(84, 84, 240);
+    color: cyan;
     font-weight: bold;
     font-size: max(min(2vw, 32px), 16px);
-    font-family: courier-prime-code;
+    font-family: courier-prime-code, 'Courier New', Courier, monospace;
 }
 
 ul {
-    font-family: courier-prime-code;
+    font-family: courier-prime-code, 'Courier New', Courier, monospace;
     padding: 0px 10%;
 }
 
@@ -89,13 +84,15 @@ ul>li {
 }
 
 #navigation-menu>div>p {
-    font-family: kaliber-square;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: max(min(2.5vw, 40px), 20px);
     padding: max(min(0.25vw, 4px), 2px) max(min(1vw, 16px), 8px) 0;
     color: rgba(0, 0, 0, 0);
 }
 
 #navigation-menu>div>a {
+    font-weight: bold;
     float: left;
     position: absolute;
     bottom: -1%;
@@ -188,10 +185,13 @@ ul>li {
     grid-column: 1/3;
 }
 
+#project-to-me:hover {
+    background-color: rgba(255, 51, 255, 0.05);
+}
 
 /*my-contributions starts here*/
 #my-contributions>div.section {
-    background-color: rgba(204, 51, 255, 0.2);
+    background-color: rgba(204, 51, 255, 0.125);
     border-radius: min(4vw, 128px);
     justify-self: center;
     max-width: 90%;
@@ -205,7 +205,7 @@ ul>li {
 }
 
 #my-contributions>div.section:hover {
-    background-color: rgba(255, 51, 255, 0.3);
+    background-color: rgba(255, 51, 255, 0.2);
 }
 
 #my-contributions>div.section>ul {
@@ -224,10 +224,15 @@ ul>li {
 
 #my-contributions>div.section>div>img {
     width: min(600px, 35vw);
+    max-height: min(600px, 35vw);
     object-fit: contain;
     object-position: center bottom;
+    transition: transform 0.25s ease;
 }
 
+#my-contributions>div.section>div>img:hover{
+    transform: scale(1.2);
+}
 
 /*group starts here*/
 #group {

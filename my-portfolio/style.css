@@ -7,14 +7,9 @@ html {
     src: url('fonts/Courier Prime Code.ttf');
 }
 
-@font-face {
-    font-family: kaliber-square;
-    src: url('fonts/kalibers.ttf');
-}
-
 body {
     color: #fff;
-    font-family: kaliber-square;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: max(min(2vw, 32px), 16px);
     margin: 0%;
     width: 100%;
@@ -25,14 +20,14 @@ body {
 p {
     color: #fff;
     font-size: 1.75vw;
-    font-family: courier-prime-code;
+    font-family: courier-prime-code, 'Courier New', Courier, monospace;
     margin: 0;
 }
 
 h1,
 h2 {
     color: #fff;
-    font-weight: normal;
+    font-weight: bold;
     margin: 0%;
 }
 
@@ -47,7 +42,7 @@ h2 {
 
 span.focus {
     font-weight: bolder;
-    color: rgb(84, 84, 240);
+    color: cyan;
 }
 
 span.tab-indent {
@@ -86,13 +81,15 @@ div.web-background {
 }
 
 #navigation-menu>div>p {
-    font-family: kaliber-square;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: max(min(2.5vw, 40px), 20px);
     padding: max(min(0.25vw, 4px), 2px) max(min(1vw, 16px), 8px) 0;
     color: rgba(0, 0, 0, 0);
 }
 
 #navigation-menu>div>a {
+    font-weight: bold;
     float: left;
     position: absolute;
     bottom: -1%;
@@ -163,8 +160,6 @@ div.self-intro {
 
 #displayed-project>div.image {
     position: relative;
-    width: 35vw;
-    height: 35vw;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.02);
     overflow: hidden;

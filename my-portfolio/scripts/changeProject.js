@@ -16,7 +16,7 @@ let index = 0, elementID, allIcons, projectSwitchInterval,
     coverElement = document.getElementById("cover"),
     gifElement = document.getElementById("gif"),
     projectElement = document.getElementById("displayed-project"),
-    allProjectPaths = ["infamy/"],//, "rapture-reign/"],
+    allProjectPaths = ["rapture-reign/","infamy/"],
     preload = [], allProjectContents = [];
 
 function showPreviousProject() {
@@ -44,13 +44,12 @@ function setProject() {
         icon.style.width = "max(1vh, 1vw)";
     })
     elementID = `project-${index}`;
-    console.log(elementID);
     document.getElementById(elementID).style.backgroundColor = "rgb(84, 84, 240)";
     document.getElementById(elementID).style.height = "max(1.6vh, 1.6vw)";
     document.getElementById(elementID).style.width = "max(1.6vh, 1.6vw)";
     coverElement.src = allProjectContents[index].coverSrc;
     gifElement.src = allProjectContents[index].gifSrc;
-    document.getElementById("title").innerHTML = allProjectContents[index].title.toUpperCase();
+    document.getElementById("title").innerHTML = allProjectContents[index].title;
     document.getElementById("genre").innerHTML = allProjectContents[index].genre;
     document.getElementById("platform").innerHTML = allProjectContents[index].platform;
     document.getElementById("engine").innerHTML = allProjectContents[index].engine;
@@ -107,6 +106,7 @@ function preloadImages() {
                 const coverSrc = path + lines.find(line => line.startsWith("Cover Src")).split(":")[1].trim();
                 const coverType = lines.find(line => line.startsWith("Cover Type")).split(":")[1].trim();
                 const gifSrc = path + lines.find(line => line.startsWith("Gif Src")).split(":")[1].trim();
+                allProjectContents.push(new ProjectContents(coverSrc, coverType, gifSrc, title, genre, platform, engine, time, role));
 
                 const cover = new Image();
                 cover.src = coverSrc;
@@ -116,8 +116,6 @@ function preloadImages() {
                     gif.src = gifSrc;
                     gif.onload = () => {
                         preload.push(gif)
-
-                        allProjectContents.push(new ProjectContents(coverSrc, coverType, gifSrc, title, genre, platform, engine, time, role));
                         loadedCount++;
 
                         if (loadedCount == allProjectPaths.length) {
