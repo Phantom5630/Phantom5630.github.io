@@ -3,7 +3,7 @@ Genre:
 Platform: 
 Engine: 
 Time: 
-Role: 
+Role: Programmer
 Cover Type: 
-Cover Src: 
-Gif Src: 
+Cover Src: images/
+Gif Src: images/

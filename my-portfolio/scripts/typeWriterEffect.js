@@ -23,7 +23,7 @@ function typewriter() {
 				setTimeout(typewriter, 200);
 			}
 			else {
-				setTimeout(typewriter, Math.random() * 20 + 40);
+				setTimeout(typewriter, Math.random() * 5 + 35);
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 Title: Infamy
 Genre: 2D Sidescroll | Strategy | Minigames
-Platform: PC
+Platform: Windows PC
 Engine: Unity
 Time: 16/1/24 - 19/4/24
 Role: Tech Lead & Gameplay Programmer
