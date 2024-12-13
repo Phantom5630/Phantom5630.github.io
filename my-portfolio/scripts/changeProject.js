@@ -90,15 +90,19 @@ function createIcons() {
     document.getElementById("selection").appendChild(newProject);
 }
 
-function preloadImages() {
-    return new Promise((resolve, reject) => {
+async function preloadImages() {
+    return new Promise(async (resolve, reject) => {
         let loadedCount = 0;
         const projectNum = allProjectPaths.length;
 
-        for (let i=0; i < projectNum; i++)
-        {
+        // Sequential loading of projects
+        for (let i = 0; i < projectNum; i++) {
             const path = allProjectPaths[i];
-            fetch(path + "data.txt").then(response => response.text()).then(data => {
+            
+            try {
+                // Fetch project data and process it
+                const response = await fetch(path + "data.txt");
+                const data = await response.text();
                 const lines = data.split("\n");
                 const title = lines.find(line => line.startsWith("Title")).split(":")[1].trim();
                 const genre = lines.find(line => line.startsWith("Genre")).split(":")[1].trim();
@@ -109,35 +113,44 @@ function preloadImages() {
                 const coverSrc = path + lines.find(line => line.startsWith("Cover Src")).split(":")[1].trim();
                 const coverType = lines.find(line => line.startsWith("Cover Type")).split(":")[1].trim();
                 const gifSrc = path + lines.find(line => line.startsWith("Gif Src")).split(":")[1].trim();
+
+                // Add the ProjectContents object
                 allProjectContents.push(new ProjectContents(coverSrc, coverType, gifSrc, title, genre, platform, engine, time, role));
+
+                // Load the cover image
+                const cover = await loadImage(coverSrc);
+                preload.push(cover);
+
+                // Load the gif image
+                const gif = await loadImage(gifSrc);
+                preload.push(gif);
+
                 loadedCount++;
 
-                const cover = new Image();
-                cover.src = coverSrc;
-                cover.onload = () => {
-                    preload.push(cover);
-                    gif = new Image();
-                    gif.src = gifSrc;
-                    gif.onload = () => {
-                        preload.push(gif)
+                // Check if all projects have been loaded
+                if (loadedCount === projectNum) {
+                    resolve(); // All projects are loaded
+                }
 
-                        if (loadedCount == projectNum) {
-                            resolve();
-                        }
-                    }
-                }
-                cover.onerror = () => {
-                    console.log(`failed to load at "${coverSrc}"`)
-                    reject();
-                }
-                gif.onerror = () => {
-                    console.log(`failed to load at "${gifSrc}"`)
-                    reject();
-                }
-            })
+            } catch (error) {
+                console.log(`Error loading project ${i}:`, error);
+                reject(error); // Reject if anything fails during fetching or image loading
+                return;
+            }
         }
     });
 }
+
+// Helper function to load an image
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image at ${src}`));
+    });
+}
+
 
 
 preloadImages().then(function () {
