@@ -106,7 +106,6 @@ function preloadImages() {
                 const coverSrc = path + lines.find(line => line.startsWith("Cover Src")).split(":")[1].trim();
                 const coverType = lines.find(line => line.startsWith("Cover Type")).split(":")[1].trim();
                 const gifSrc = path + lines.find(line => line.startsWith("Gif Src")).split(":")[1].trim();
-                allProjectContents.push(new ProjectContents(coverSrc, coverType, gifSrc, title, genre, platform, engine, time, role));
 
                 const cover = new Image();
                 cover.src = coverSrc;
@@ -116,6 +115,7 @@ function preloadImages() {
                     gif.src = gifSrc;
                     gif.onload = () => {
                         preload.push(gif)
+                        allProjectContents.push(new ProjectContents(coverSrc, coverType, gifSrc, title, genre, platform, engine, time, role));
                         loadedCount++;
 
                         if (loadedCount == allProjectPaths.length) {
