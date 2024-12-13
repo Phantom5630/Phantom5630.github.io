@@ -6,4 +6,4 @@ Time: 22/5/24 - 20/8/24
 Role: Tech Lead & Gameplay Programmer
 Cover Type: Header
 Cover Src: images/rapture-reign-header.png
-Gif Src: images/rapture-reign-header.png
+Gif Src: images/gameplay.gif

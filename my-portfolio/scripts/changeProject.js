@@ -114,9 +114,6 @@ async function preloadImages() {
                 const coverType = lines.find(line => line.startsWith("Cover Type")).split(":")[1].trim();
                 const gifSrc = path + lines.find(line => line.startsWith("Gif Src")).split(":")[1].trim();
 
-                // Add the ProjectContents object
-                allProjectContents.push(new ProjectContents(coverSrc, coverType, gifSrc, title, genre, platform, engine, time, role));
-
                 // Load the cover image
                 const cover = await loadImage(coverSrc);
                 preload.push(cover);
@@ -125,6 +122,7 @@ async function preloadImages() {
                 const gif = await loadImage(gifSrc);
                 preload.push(gif);
 
+                allProjectContents.push(new ProjectContents(coverSrc, coverType, gifSrc, title, genre, platform, engine, time, role));
                 loadedCount++;
 
                 // Check if all projects have been loaded
