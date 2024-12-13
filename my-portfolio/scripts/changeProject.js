@@ -93,8 +93,11 @@ function createIcons() {
 function preloadImages() {
     return new Promise((resolve, reject) => {
         let loadedCount = 0;
+        const projectNum = allProjectPaths.length;
 
-        allProjectPaths.forEach((path) => {
+        for (let i=0; i < projectNum; i++)
+        {
+            const path = allProjectPaths[i];
             fetch(path + "data.txt").then(response => response.text()).then(data => {
                 const lines = data.split("\n");
                 const title = lines.find(line => line.startsWith("Title")).split(":")[1].trim();
@@ -107,7 +110,7 @@ function preloadImages() {
                 const coverType = lines.find(line => line.startsWith("Cover Type")).split(":")[1].trim();
                 const gifSrc = path + lines.find(line => line.startsWith("Gif Src")).split(":")[1].trim();
                 allProjectContents.push(new ProjectContents(coverSrc, coverType, gifSrc, title, genre, platform, engine, time, role));
-                console.log(`"${coverSrc}", ${gifSrc}, ${title}`)
+                loadedCount++;
 
                 const cover = new Image();
                 cover.src = coverSrc;
@@ -117,9 +120,8 @@ function preloadImages() {
                     gif.src = gifSrc;
                     gif.onload = () => {
                         preload.push(gif)
-                        loadedCount++;
 
-                        if (loadedCount == allProjectPaths.length) {
+                        if (loadedCount == projectNum) {
                             resolve();
                         }
                     }
@@ -133,7 +135,7 @@ function preloadImages() {
                     reject();
                 }
             })
-        });
+        }
     });
 }
 
