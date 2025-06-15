@@ -52,10 +52,12 @@
             </div>
             <ul id="project-to-me">
                 <br>
-                <h3 style="font-size: 1.25em;">Additional Info</h3>
-                <li>Outcome of my GPS2 (Group Project Studio 2) subject.</li>
-                <li>My first time working in a large group.</li>
-                <li>I also experienced how important communications and managements are.</li>
+                <button onclick="toggleDropdown(this)", style="all: unset;"><h3 style="font-size: 1.25em;">Additional Info</h3></button>
+                <div class = "toggle-content">
+                    <li>Outcome of my GPS2 (Group Project Studio 2) subject.</li>
+                    <li>My first time working in a large group.</li>
+                    <li>I also experienced how important communications and managements are.</li>
+                </div>
             </ul>
         </div>
     </div>
@@ -188,6 +190,8 @@
     </div>
 
     <div id="web-background"></div>
+    
+    <script src="../scripts/toggleDropdown.js"></script>
 </body>
 
 </html>
