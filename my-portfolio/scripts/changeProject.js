@@ -16,7 +16,7 @@ let index = 0, elementID, allIcons, projectSwitchInterval,
     coverElement = document.getElementById("cover"),
     gifElement = document.getElementById("gif"),
     projectElement = document.getElementById("displayed-project"),
-    allProjectPaths = ["rapture-reign/","infamy/"],
+    allProjectPaths = ["rapture-reign/","infamy/","mopsy's-toyshop-adventure/"],
     preload = [], allProjectContents = [];
 
 function showPreviousProject() {
