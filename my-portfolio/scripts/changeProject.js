@@ -16,7 +16,7 @@ let index = 0, elementID, allIcons, projectSwitchInterval,
     coverElement = document.getElementById("cover"),
     gifElement = document.getElementById("gif"),
     projectElement = document.getElementById("displayed-project"),
-    allProjectPaths = ["rapture-reign/","infamy/","it-is-just-level-one/"],
+    allProjectPaths = ["rapture-reign/","infamy/"],
     preload = [], allProjectContents = [];
 
 function showPreviousProject() {

@@ -1,9 +1,0 @@
-Title: It's Just Level One
-Genre: 3D Platformer
-Platform: Windows PC
-Engine: Unreal Engine
-Time: 26/9/24 - 17/10/24
-Role: Level Designer & Programmer
-Cover Type: Cover
-Cover Src: images/level-one-cover.png
-Gif Src: images/level-one-preview.gif
