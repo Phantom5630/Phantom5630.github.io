@@ -1,9 +1,0 @@
-Title: 
-Genre: 
-Platform: 
-Engine: 
-Time: 
-Role: Programmer
-Cover Type: 
-Cover Src: images/
-Gif Src: images/
