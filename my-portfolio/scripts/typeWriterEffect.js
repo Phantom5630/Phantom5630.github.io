@@ -1,25 +1,32 @@
-const text = "A game programmer,\ncurrently studying in UOW Malaysia KDU.";
-let index1 = 0;
+const text = ["A game development tech stream student,\nstudying under UOW Malaysia KDU.", 
+				"\n\nCurrently looking for an internship\nto fulfill graduation requirement."];
+let indexChar = 0;
+let indexArr = 0;
 let startCorrection = false;
 
 function typewriter() {
 	if (!startCorrection) {
-		if (index1 < text.length) {
-			const char = text.charAt(index1);
+		if (indexChar < text[indexArr].length) {
+			const char = text[indexArr].charAt(indexChar);
 			if (char == "\n") {
 				document.getElementById("typewriter").innerHTML += "<br>";
 			}
 			else {
 				document.getElementById("typewriter").innerHTML += char;
 			}
-			index1++;
-			if (index1 == text.length) {
-				startCorrection = true;
+			indexChar++;
+			if (indexChar == text[indexArr].length) {
+				if(indexArr == 0){
+					startCorrection = true;
+				}
+				else{
+					document.getElementById("text-cursor").style.animation = "text-cursor-effect 1s infinite";
+				}
 			}
 			if (char == " " || char == "\n") {
 				setTimeout(typewriter, 100);
 			}
-			else if (char == "."){
+			else if (char == ".") {
 				setTimeout(typewriter, 200);
 			}
 			else {
@@ -27,14 +34,17 @@ function typewriter() {
 			}
 		}
 	}
-	else if (index1 >= text.length - 4) {
-		index1--;
-		document.getElementById("typewriter").innerHTML = document.getElementById("typewriter").innerHTML.substring(0, index1 + 3);
+	else if (indexArr == 0 && indexChar >= text[indexArr].length - 4) {
+		indexChar--;
+		document.getElementById("typewriter").innerHTML = document.getElementById("typewriter").innerHTML.substring(0, indexChar + 3);
 		setTimeout(typewriter, 40);
 	}
 	else {
 		document.getElementById("typewriter").innerHTML += ".";
-		document.getElementById("text-cursor").style.animation = "text-cursor-effect 1s infinite";
+		indexArr = 1;
+		indexChar = 0;
+		startCorrection = false;
+		setTimeout(typewriter, 40);
 	}
 }
 
