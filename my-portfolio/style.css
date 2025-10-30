@@ -62,8 +62,11 @@ div.web-background {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: radial-gradient(circle, rgb(63,255,191), cyan, rgb(127, 127, 255), magenta);
-    /*, url('images/player-skill-gif.gif');*/
+    background-image: radial-gradient(circle, 
+        rgb(63,255,191), 
+        cyan, 
+        rgb(127, 127, 255), 
+        magenta);
 }
 
 #navigation-menu {

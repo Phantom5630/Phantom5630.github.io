@@ -193,13 +193,34 @@ ul>li {
     color:#f3f;
 }
 
+.triangle {
+    display: inline-block;
+    margin-left: 6px;
+    width: 0;
+    height: 0;
+    border-left: 0.55em solid transparent;
+    border-right: 0.55em solid transparent;
+    border-top: 0.66em solid cyan;
+    transition: transform 0.3s ease;
+    transform: rotate(-180deg);    
+}
+
+button:hover>.triangle{
+    border-top: 0.66em solid #f3f;
+}
+
+.show .triangle{
+    transform: rotate(0deg);    
+}
+
 .toggle-content {
   display: none;
 }
 
-.toggle-content.show {
+.show .toggle-content{
   display: block;
 }
+
 
 /*my-contributions starts here*/
 #my-contributions>div.section {
