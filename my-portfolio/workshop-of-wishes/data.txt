@@ -2,8 +2,8 @@ Title: Workshop of Wishes
 Genre: Adventure | 3D | Puzzle
 Platform: PC
 Engine: Unreal Engine 5.5
-Time: 3/2/25 - now
+Time: 3/2/25 - 3/9/25
 Role: Tech Lead, Gameplay & VFX Programmer
 Cover Type: Banner
 Cover Src: images/workshop-of-wishes-banner.png
-Gif Src: images/mopsy's-toyshop-adventure-banner.png
+Gif Src: images/workshop-of-wishes-trailer.gif

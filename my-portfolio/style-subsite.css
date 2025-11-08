@@ -17,11 +17,16 @@ body {
     overflow-x: hidden;
 }
 
-p {
+p, a.plain {
     color: #fff;
     font-size: 0.9em;
     font-family: courier-prime-code, 'Courier New', Courier, monospace;
     margin: 0;
+    text-decoration: none;
+}
+
+a.plain:hover{
+    font-weight: bold;
 }
 
 h1,
@@ -54,6 +59,7 @@ ul {
 }
 
 ul>li {
+    font-size: max(1.5vw, 16px);
     margin-bottom: max(min(2vw, 32px), 16px);
 }
 
@@ -222,7 +228,7 @@ button:hover>.triangle{
 }
 
 
-/*my-contributions starts here*/
+/* #region my-contributions */
 #my-contributions>div.section {
     background-color: rgba(204, 51, 255, 0.125);
     border-radius: min(4vw, 128px);
@@ -255,19 +261,21 @@ button:hover>.triangle{
     text-align: center;
 }
 
-#my-contributions>div.section>div>img {
+#my-contributions>div.section>div>img,
+#my-contributions>div.section>div>video {
     width: min(600px, 35vw);
     max-height: min(600px, 35vw);
     object-fit: contain;
     object-position: center bottom;
     transition: transform 0.25s ease;
 }
-
+/* 
 #my-contributions>div.section>div>img:hover{
     transform: scale(1.2);
-}
+} */
+/* #endregion */
 
-/*group starts here*/
+/* #region group */
 #group {
     margin-bottom: 128px;
 }
@@ -301,6 +309,7 @@ button:hover>.triangle{
 #group>div>div.member:hover>p {
     background-color: rgba(255, 51, 255, 0.3);
 }
+/* #endregion */
 
 @media (max-aspect-ratio: 1/1) {
     #intro>div {

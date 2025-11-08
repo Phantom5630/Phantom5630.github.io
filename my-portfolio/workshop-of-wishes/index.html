@@ -37,19 +37,19 @@
     <div id="intro">
         <h1>GAME INTRODUCTION</h1>
         <div>
-            <h2 id="title">Mopsy's Toyshop Adventure</h2>
+            <h2 id="title">Workshop of Wishes</h2>
             <p style="text-align: center;">Adventure | 3D | Puzzle</p>
-            <a id="cover" href="https://uowmgames.itch.io/mopsystoyshopadventure">
+            <a id="cover" href="https://uowmgames.itch.io/workshopofwishes">
                 <img src="images/workshop-of-wishes-banner.png" alt="Workshop of Wishes Banner ">
             </a>
             <p>
                 You play as a stuffed toy rabbit, Mopsy which is broken and travels
                 to a magical toy workshop to get itself fixed.
                 <br>
-                You explores and meets other toys thoughout the adventure.
+                You explores, solves puzzles and meets other toys thoughout the adventure.
             </p>
             <div id="button-container">
-                <a href="https://uowmgames.itch.io/mopsystoyshopadventure">TRY OUT NOW!</a>
+                <a href="https://uowmgames.itch.io/workshopofwishes">TRY OUT NOW!</a>
             </div>
             <ul id="project-to-me">
                 <br>
@@ -61,6 +61,7 @@
                 <li>This is the project developed for my FYP.</li>
                 <li>This is my first time developing an Unreal project using mainly C++.</li>
                 <li>The project's initial name is "Mopsy's Toyshop Adventure".</li>
+                <li>The closer to the end of the game, the more hard-coded mechanics are introduced (due to lack of time).</li>
                 </div>
             </ul>
         </div>
@@ -70,6 +71,110 @@
     <!--my contributions-->
     <div id="my-contributions">
         <h1>MY CONTRIBUTIONS</h1>
+        <div class="section">
+            <h2>Spelling Block Puzzle Mechanics</h2>
+            <div>
+                <img src="images/block-puzzle-activation.gif" alt="gif showing activation animation of block puzzle">
+                <h3>Puzzle Activation</h3>
+            </div>
+            <div>
+                <img src="images/push-pull-movement.gif" alt="gif showing player movement while holding a block">
+                <h3>Push and Pull Movement</h3>
+            </div>
+            <div>
+                <img src="images/block-puzzle-snapping.gif" alt="gif showing block snapping and indicators telling whether it is placed right">
+                <h3>Block Snapping and Indicators</h3>
+            </div>
+            <div>
+                <img src="images/block-puzzle-completion.gif" alt="gif showing moving platform activated when puzzle is completed">
+                <h3>Puzzle Completion Event</h3>
+            </div>
+            <ul>
+                <li>The camera panning effects are achieved using Unreal's built-in View Target setting function.</li>
+                <li>The movement is centered on the player regardless of the movement direction.</li>
+                <li>The movement used to have a slower rotation rate to be more realistic but feedbacks on it are quite bad.</li>
+                <li>When interacting with a block, a simple available space check is done to avoid unstoppable 
+                    auto movement to a unreachable target interaction spot.</li>
+                <li>The block puzzle is both letter and color sensitive.</li>
+                <li>Each time the level is loaded, all letters and their colors will be randomized 
+                    (the right letters will always be included and will not have duplicates).</li>
+                <li>When there is a slot being selected, it will emits a brighter glow.</li>
+                <li>Whenever a block snaps into a slot, the glow color will turn green if it is the desired block. Otherwise, it will turn red.</li>
+                <li>The block will not snap if there is another block on all slots in range, the checking is done through SweepMultiByChannel.</li>
+                <li>The next event registered will be called right after puzzle completion as a reward for completing it.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Sliding Puzzle Mechanics</h2>
+            <div>
+                <img src="images/sliding-puzzle-gameplay.gif" alt="gif showing sliding puzzle gameplay">
+                <h3>Sliding Puzzle Gameplay</h3>
+            </div>
+            <div>
+                <img src="images/sliding-puzzle-modify.gif" alt="gif showing adjustments done on sliding puzzle">
+                <h3>Sliding Puzzle Modifications</h3>
+            </div>
+            <ul>
+                <li>The rules and gameplay is exactly the same with tile sliding puzzle or number klotski, 
+                    except that the right locations is defined by visual instead of numbers.</li>
+                <li>The starting orders are randomized each time the level is loaded, 
+                    this is done by randomly moving the available tiles certain times (no backward step or undo) on an already solved one.</li>
+                <li>I allowed adjustment on number of division and texture even though it only appeared once in the game.</li>
+                <li>Each sliding pieces is an instance under an Instanced Mesh Component which uses a plane mesh and 
+                    the visual is assigned using Texture Coordinate remapping in shader.</li>
+                <li>The visuals where the prop in the picture became white is achieved by texture masking in shader.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Jack the Antagonist</h2>
+            <div>
+                <img src="images/jack-steal-star.gif" alt="gif showing process of Jack grabbing the star before running">
+                <h3>Jack Steal Star</h3>
+            </div>
+            <div>
+                <img src="images/chasing-game.gif" alt="gif showing part of the Jack chasing game">
+                <h3>Chasing Game</h3>
+            </div>
+            <ul>
+                <li>These are a series of hard-coded interactions.</li>
+                <li>Star stealing process: Jack distract player > player look backward > 
+                    player look back after a delay (nothing is behind) > Jack already gone.</li>
+                <li>Chasing game: Jack poof away from player > Jack "taunt" player > Jack poof to hiding spot > 
+                    player look for Jack > player touch Jack > dialogue triggered > repeats until no more escape route.</li>
+                <li>Whenever Jack's animation involved, all interactions are ignored and the event will automatically proceed upon animation ending.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Completely Linear Events With Chapter Selection Support</h2>
+            <div>
+                <img src="images/chapter-selection-demo.gif" alt="gif showing game starts from different chapters">
+                <h3>Chapter Selection Demo</h3>
+            </div>
+            <div>
+                <img src="images/chapter-starts.png" alt="image showing actor holding all chapters' starting FTransform">
+                <h3>Chapters Start Indicator</h3>
+            </div>
+            <div>
+                <img src="images/chapter-data-interface.png" alt="image showing interface of blueprint storing chapter data">
+                <h3>Chapter Blueprint Interface</h3>
+            </div>
+            <div>
+                <img src="images/gameplay-manager-interface.png" alt="image showing interface of blueprint storing all chapters">
+                <h3>Gameplay Manager Interface</h3>
+            </div>
+            <ul>
+                <li>The event system is designed to support chapter selection by skipping all events in previous chapters.</li>
+                <li>Skipping events = interactables and puzzles immediately reaches its "completed" state when the game starts.</li>
+                <li>All events are stored in each chapter's own blueprint to allow changes to dialogues while new chapters are being developed.</li>
+                <li>The "Gameplay Manager" is a ALevelScriptActor derived class which holds all chapters' blueprints to manage 
+                    all events execution, events skipping and dialogues.</li>
+                <li>The player's starting transform for each chapter is decided by a custom AActor derived class with 2 Instanced Mesh Component
+                    as indicators.</li>
+                <li>The indicators are editor-only and an array holding a copy of instances' FTransform are manipulated in OnConstruction.</li>
+                <li>I also used black screen fading effect (the same one as <a href="#respawn", class="plain">respawn</a>) 
+                    whenever the game starts to cover up the visuals of events skipping and teleportation.</li>
+            </ul>
+        </div>
         <div class="section">
             <h2>Construction Script Based Train and Rail Generation</h2>
             <div>
@@ -93,6 +198,24 @@
                     Rail Generation is similar to any tutorial available online but
                     with all rails share the same distance along the spline.
                 </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Procedural Instanced Meshes Generator</h2>
+            <div>
+                <video controls> 
+                    <source src="images/instances-generation-demo.mp4" type="video/mp4"></video>
+                <h3>Generation Demo</h3>
+            </div>
+            <ul>
+                <li>The function is added to save time when adding instances with repeating pattern(s) in their transforms.</li>
+                <li>It works by adding x instances to the Instanced Static Mesh Component based on an array of FTransform 
+                    with desired number of instances (n) to add for each FTransform, where x = (n1 + i1) * (n2 + i2) * ... *
+                    (ns + is); i = include original ticked; s = array size.</li>
+                <li>Each of the added instances' transfroms is calculated by FTransform multiplication (relative transform ticked) 
+                    or addition.</li>
+                <li>Each time instances is added, an array of indices is stored and will only be used for the remove function.</li>
+                <li>Unfortunately, I'm the only one who ended up using it, due to the rest not familiar or dislike working with transforms calculation.</li>
             </ul>
         </div>
         <div class="section">
@@ -127,11 +250,30 @@
             <h2>Custom Gravity Direction Relative To Train</h2>
             <div>
                 <img src="images/custom-gravity-direction-train.gif" alt="gif showing gravity following orientation of the train">
-                <h3>Train Orientation Relative Gravity</h3>
+                <h3>Custom Gravity Demo</h3>
             </div>
             <ul>
                 <li>The implementation mainly follows Unreal's documentation.</li>
                 <li>This approach is used as an experiment to figure out the pros and cons compared to rotating the whole world.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Train Riding</h2>
+            <div>
+                <img src="images/train-ride.gif" alt="gif showing player interacts with the train and ride it">
+                <h3>Interaction and Riding</h3>
+            </div>
+            <div>
+                <img src="images/train-drop-off.gif" alt="gif showing player get off the train upon reaching destination">
+                <h3>Drop-off</h3>
+            </div>
+            <ul>
+                <li>The whole train is actually interactable.</li>
+                <li>When interacting with the train, the player character is set to invisible upon poofing, the camera pan to player mesh on train, 
+                    then the meshes on train are set to visible upon poofing one by one (to a total of 1 + number of unlocked NPCs).</li>
+                <li>While riding, the player can rotate the camera attached on the train but with limited angles.</li>
+                <li>When reaching the destination, the player character is teleported to drop off point first, before the view target 
+                    switch back to it and then all meshes visibility is toggled together with simultaneous poofs.</li>
             </ul>
         </div>
         <div class="section">
@@ -151,7 +293,27 @@
             </ul>
         </div>
         <div class="section">
-            <h2>Simple Respawn Effect</h2>
+            <h2>Texture Atlas Remapping</h2>
+            <div>
+                <img style="width: min(400px, 23vw);" src="images/wooden-block-uv.png" alt="image showing uv of wooden block">
+                <h3>Wooden Block's UV</h3>
+            </div>
+            <div>
+                <img style="width: min(400px, 23vw);" src="images/texture-atlas.png" alt="the texture atlas used for wooden block">
+                <h3>Texture Atlas Used</h3>
+            </div>
+            <div>
+                <img style="width: min(400px, 23vw);" src="images/shader-output.png" alt="image showing the output of shader applied for wooden block">
+                <h3>Wooden Block Shader Output</h3>
+            </div>
+            <ul>
+                <li>Wooden block's pattern for each faces, letter and color of the letter are all managed through parameters
+                    so I can automate the randomizing process.</li>
+                <li>The paper part is outcome of my suggestion after looking at the references provided.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 id = "respawn">Simple Respawn Effect</h2>
             <div>
                 <img src="images/respawn-and-fade.gif" alt="gif showing process of respawning">
                 <h3>Respawn Demo</h3>
@@ -159,6 +321,29 @@
             <ul>
                 <li>Teleport player to preset respawn point, make them face preset direction and reset camera rotation.</li>
                 <li>Fading effect achieved by lerping original color and black in post processing.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>NPCs Poof In and Out for Dialogue</h2>
+            <div>
+                <img src="images/npc-dialogue-poof.gif" alt="gif showing NPCs poof in and out when player talk to Jack in the Box">
+                <h3>NPCs Poof during Jack Interaction</h3>
+            </div>
+            <ul>
+                <li>This is developed to has the NPCs not being "absent" especially when they talk.</li>
+                <li>Empty spaces checking is done through SweepSingleByChannel certain times per frame until empty spaces are found.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>3D to '2D' Platforming</h2>
+            <div>
+                <img src="images/platforming.gif" alt="gif showing the prototype of platforming transition and its gameplay">
+                <h3>Transition and Platforming Demo</h3>
+            </div>
+            <ul>
+                <li>Transition is triggered when player enters or leaves specified region.</li>
+                <li>In 2D mode, up, down and camera controls are ignored.</li>
+                <li>The moving platforms' movements follow a spline, which help visualize the movement and also allow curved movements.</li>
             </ul>
         </div>
        <!-- div.section>h2+(div*n>img+h3)+ul>li*n-->

@@ -16,7 +16,7 @@ let index = 0, elementID, allIcons, projectSwitchInterval,
     coverElement = document.getElementById("cover"),
     gifElement = document.getElementById("gif"),
     projectElement = document.getElementById("displayed-project"),
-    allProjectPaths = ["rapture-reign/","infamy/","workshop-of-wishes/"],
+    allProjectPaths = ["workshop-of-wishes/","rapture-reign/","infamy/"],
     preload = [], allProjectContents = [];
 
 function showPreviousProject() {
@@ -56,7 +56,6 @@ function setProject() {
     document.getElementById("time").innerHTML = allProjectContents[index].time;
     document.getElementById("role").innerHTML = allProjectContents[index].role;
     document.getElementById("project-link").href = allProjectPaths[index];
-    document.getElementById("project-link").title = allProjectContents[index].title;
 
     startSwitching();
 }
