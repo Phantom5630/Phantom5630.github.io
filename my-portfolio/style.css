@@ -161,6 +161,11 @@ div.self-intro {
     gap: 3.5vw;
 }
 
+.loading div{
+    display: none;
+    height: 0;
+}
+
 #displayed-project>div.image {
     position: relative;
     text-align: center;

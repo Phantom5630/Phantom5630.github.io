@@ -150,10 +150,14 @@ function loadImage(src) {
 
 
 
-preloadImages().then(function () {
+window.onload = preloadImages().then(function () {
     createIcons();
     allIcons = document.querySelectorAll("#portfolio>div#selection>div.project");
     setProject();
+    
+    const parent = document.getElementById("project-link");
+    parent.querySelector('h2').textContent = "";
+    parent.classList.remove("loading");
 });
 
 projectElement.addEventListener('mouseenter', stopSwitching);
