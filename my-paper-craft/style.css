@@ -1,0 +1,185 @@
+@font-face {
+    font-family: courier-prime-code;
+    src: url('../fonts/Courier Prime Code.ttf');
+}
+
+body {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: max(min(2vw, 32px), 16px);
+    margin: 0%;
+    width: 100%;
+    padding: 0%;
+    overflow-x: hidden;
+}
+
+p {
+    color: cyan;
+    font-size: 1.75vw;
+    font-family: courier-prime-code, 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+h1,
+h2 {
+    color: cyan;
+    font-weight: bold;
+    margin: 0%;
+}
+
+h1 {
+    text-align: center;
+    font-size: max(min(6vw, 96px), 48px);
+}
+
+h2 {
+    font-size: max(min(4vw, 64px), 32px);
+}
+
+a{
+    text-decoration: none;
+}
+
+div.web-background {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle,
+        cyan, 
+        rgb(127, 127, 255), 
+        magenta,
+        rgb(255,127,127));
+}
+
+/* #region navigation-menu */
+#navigation-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-items: center;
+    z-index: 1;
+}
+
+#navigation-menu>div {
+    position: relative;
+}
+
+#navigation-menu>div>p {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: max(min(2.5vw, 40px), 20px);
+    padding: max(min(0.25vw, 4px), 2px) max(min(1vw, 16px), 8px) 0;
+    color: rgba(0, 0, 0, 0);
+}
+
+#navigation-menu>div>a {
+    font-weight: bold;
+    float: left;
+    position: absolute;
+    bottom: -1%;
+    left: -1%;
+    width: 100%;
+    padding: 0;
+    font-size: max(min(2vw, 32px), 16px);
+    text-align: center;
+    color: #caf;
+    text-decoration: none;
+    transition: 0.1s ease-in-out;
+}
+
+#navigation-menu>div>a:hover {
+    font-size: max(min(2.5vw, 40px), 20px);
+    color: #f3f;
+    transition: 0.1s ease-in-out;
+}
+/* #endregion*/
+
+.container{
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: min(7.5vw, 60px) 7.5vw;
+    padding: 2.5vw;
+    border-radius: 5vw;
+    width: 85vw;
+    box-sizing: border-box;
+   
+    display: grid;
+    grid-template-columns: 90%;
+    gap:max(2vw, 20px);
+    justify-content: center;
+    text-align: center;
+}
+
+.container>div{
+    background-color: rgba(0, 0, 0, 0.2);
+
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.container img{
+    position: relative;
+    text-align: center;
+    max-width: 30vw;
+    max-height: 30vw;
+
+    margin: max(2vw, 20px);
+}
+
+.container p{
+    padding: 0 3%;
+    text-align: left;
+    width: 100%;
+}
+
+.container button{
+    background-color: rgba(0, 0, 0, 0);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.container div{
+    padding: max(1vw,16px);
+}
+
+.triangle {
+    display: inline-block;
+    margin-left: 6px;
+    width: 0;
+    height: 0;
+    border-left: 0.55em solid transparent;
+    border-right: 0.55em solid transparent;
+    border-top: 0.66em solid cyan;
+    transition: transform 0.3s ease;
+    transform: rotate(-180deg);    
+}
+
+.toggle-content{
+    display: none;
+}
+
+.container button:hover>p{
+    color:#f3f
+}
+
+.container button:hover>.triangle{
+    border-top: 0.66em solid #f3f;
+}
+
+.show .triangle{
+    transform: rotate(0deg);
+}
+
+.show .toggle-content{
+    display: block;
+}
