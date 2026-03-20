@@ -165,7 +165,8 @@ ul>li {
 #intro,
 #screenshots,
 #my-contributions,
-#group {
+#group,
+#contact {
     display: grid;
     justify-content: center;
     border-radius: min(4vw, 64px);
@@ -231,7 +232,14 @@ ul>li {
     background-color: rgba(255, 51, 255, 0.3);
 }
 
-#project-to-me {
+#build {
+    justify-self: center;
+    width: 90%;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+#project-to-me,#build {
     grid-column: 1/3;
 }
 
@@ -354,6 +362,36 @@ button:hover>.triangle{
     background-color: rgba(255, 51, 255, 0.3);
 }
 /* #endregion */
+
+#contact{
+    border-radius: min(4vw, 64px) min(4vw, 64px) 0px 0px;
+    margin-bottom: 0%;
+    padding-bottom: min(4vw, 64px);
+}
+
+#contact>div{
+    margin-top: min(2vw, 32px);
+    display: flex;
+    justify-content: center;
+    gap: min(4vw, 64px);
+}
+
+#contact>div>a{
+    background-color: rgba(204, 51, 255, 0.2);
+    padding: min(1vw, 16px) min(1vw, 16px) min(0.5vw, 8px);
+    border-radius: min(1vw, 16px);
+    transition: background-color 0.2s ease-in-out;
+}
+
+#contact>div>a:hover{
+    background-color: rgba(255, 51, 255, 0.3);
+}
+
+#contact>div>a>img{
+    height: min(4vw, 64px);
+    object-fit: contain;
+    object-position: center;
+}
 
 @media (max-aspect-ratio: 1/1) {
     #intro>div {

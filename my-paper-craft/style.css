@@ -1,3 +1,7 @@
+html {
+    scroll-padding-top: max(min(2.75vw, 44px), 22px);
+}
+
 @font-face {
     font-family: courier-prime-code;
     src: url('../fonts/Courier Prime Code.ttf');

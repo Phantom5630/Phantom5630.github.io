@@ -1,10 +1,6 @@
-html {
-    scroll-padding-top: max(min(2.75vw, 44px), 22px);
-}
-
 @font-face {
     font-family: courier-prime-code;
-    src: url('../fonts/Courier Prime Code.ttf');
+    src: url('../fonts/Courier\ Prime\ Code.ttf');
 }
 
 body {
@@ -199,10 +195,9 @@ div.self-intro {
     margin: 2.5vw 5vw 2.5vw;
     padding-bottom: 16px;
     display: grid;
-    grid-template-columns: 35vw auto;
-    grid-template-rows: 45vw;
+    grid-template-columns: 30vw auto;
     justify-content: center;
-    gap: 3.5vw;
+    gap: 2.5vw;
 }
 
 .loading div{
@@ -221,8 +216,8 @@ div.self-intro {
     position: absolute;
     top: 0%;
     left: 0%;
-    width: 35vw;
-    height: 35vw;
+    width: 30vw;
+    height: 30vw;
     object-fit: contain;
     object-position: center;
     opacity: 1;
