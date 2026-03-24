@@ -1,0 +1,9 @@
+Title: My Tower Defense
+Genre: Tower Defense
+Platform: PC
+Engine: Unity
+Time: 8/11/25 - TBC
+Role: Programmer
+Cover Type: placeholder
+Cover Src: ../images/rounded-square-placeholder.png
+Gif Src: ../images/rounded-square-placeholder.png

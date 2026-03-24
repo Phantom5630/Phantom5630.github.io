@@ -16,7 +16,7 @@ let index = 0, elementID, allIcons, projectSwitchInterval,
     coverElement = document.getElementById("cover"),
     gifElement = document.getElementById("gif"),
     projectElement = document.getElementById("displayed-project"),
-    allProjectPaths = ["workshop-of-wishes/","rapture-reign/","infamy/"],
+    allProjectPaths = ["workshop-of-wishes/","my-tower-defense/","rapture-reign/","infamy/"],
     preload = [], allProjectContents = [];
 
 function showPreviousProject() {
