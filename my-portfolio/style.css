@@ -189,30 +189,26 @@ div.self-intro {
     }
 }
 
-#displayed-project {
+.project {
+    background-color: rgba(0, 0, 0, 0.25);
     text-align: center;
     position: relative;
     margin: 2.5vw 5vw 2.5vw;
-    padding-bottom: 16px;
+    padding: 3vw;
     display: grid;
-    grid-template-columns: 30vw auto;
+    grid-template-columns: 30vw 45vw;
     justify-content: center;
     gap: 2.5vw;
 }
 
-.loading div{
-    display: none;
-    height: 0;
-}
-
-#displayed-project>div.image {
+.project>div.image {
     position: relative;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.02);
     overflow: hidden;
 }
 
-#displayed-project>div.image>img {
+.project>div.image>img {
     position: absolute;
     top: 0%;
     left: 0%;
@@ -224,72 +220,23 @@ div.self-intro {
     transition: opacity ease 0.1s;
 }
 
-#displayed-project>div.image>#gif {
+.project>div.image>.gif {
     opacity: 0;
 }
 
-#displayed-project>div.image:hover>img {
+.project>div.image:hover>img {
     opacity: 0;
     transition: opacity ease 1s;
     transition-delay: 0.4s;
 }
 
-#displayed-project>div.image:hover>#gif {
+.project>div.image:hover>.gif {
     opacity: 1;
 }
 
-#displayed-project>div>p.left {
+.project>div>p.left {
     text-align: left;
     margin: 0%;
-}
-
-#portfolio>div#selection {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    gap: max(0.7vh, 0.7vw);
-    padding-bottom: 3vw;
-}
-
-#portfolio>div#selection>div.prev,
-#portfolio>div#selection>div.next {
-    height: 0px;
-    width: 0px;
-    border-top: max(3vh, 3vw) solid transparent;
-    border-bottom: max(3vh, 3vw) solid transparent;
-    transition: all 0.1s linear;
-}
-
-#portfolio>div#selection>div.prev {
-    border-right: max(3vh, 3vw) solid #fff;
-    margin-right: max(4vh, 4vw);
-}
-
-#portfolio>div#selection>div.next {
-    border-left: max(3vh, 3vw) solid #fff;
-    margin-left: max(4vh, 4vw);
-}
-
-#portfolio>div#selection>div.prev:hover {
-    border-right: max(3vh, 3vw) solid #f3f;
-}
-
-#portfolio>div#selection>div.next:hover {
-    border-left: max(3vh, 3vw) solid #f3f;
-}
-
-#portfolio>div#selection>div.project {
-    flex-grow: 0;
-    background-color: #fff;
-    height: max(1vh, 1vw);
-    width: max(1vh, 1vw);
-    border-radius: 40%;
-    align-self: center;
-    transition: all 0.1s linear;
-}
-
-#portfolio>div#selection>div.project:hover {
-    background-color: #f3f;
 }
 
 #experience>div {

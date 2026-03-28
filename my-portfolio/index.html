@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <!--navigation menu-->
+    <!-- #region navigation menu -->
     <div id="navigation-menu">
         <div>
             <p>HOME</p>
@@ -19,9 +19,10 @@
             <p>MY RESUME</p>
             <a href="TPHs_Resume.pdf">MY RESUME</a>
         </div>
-        <div>
+        <div class = "dropdown">
             <p>MY PROJECTS</p>
             <a href="#portfolio">MY PROJECTS</a>
+            <ul class = "dropdown-menu" id = "portfolio-dropdown"></ul>
         </div>
         <div>
             <p>CONTACT ME</p>
@@ -35,8 +36,9 @@
             </ul>
         </div>
     </div>
+    <!-- #endregion -->
 
-    <!--self intro-->
+    <!-- #region self-intro -->
     <div id="home">
         <h1>ABOUT ME</h1>
         <div class="self-intro">
@@ -51,87 +53,45 @@
             </div>
         </div>
     </div>
+    <!-- #endregion -->
 
-    <!--portfolio-->
+
+    <!-- #region portfolio -->
     <div id="portfolio">
         <h1>MY PROJECTS</h1>
-        <a id="project-link" class = "loading" href="" target="_blank">
-            <h2 style="text-align: center;">Loading...</h2>
-            <div id="displayed-project">
+    </div>
+
+    <template id = "portfolio-template">
+        <a class ="project-link" class = "loading" href="" target="_blank">
+            <div class="project">
                 <div class="image">
-                    <img id="cover" src="" alt="" />
-                    <img id="gif" src="" alt="" />
+                    <img class="cover" src="" alt="" />
+                    <img class="gif" src="" alt="" />
                 </div>
                 <div style="text-align:center;">
-                    <h2 id="title"></h2>
-                    <p id="genre", style="margin-bottom: 8px;"></p>
+                    <h2 class="title"></h2>
+                    <p class="genre", style="margin-bottom: 8px;"></p>
                     <p class="left">
                         <span class="focus">Platform:</span>
-                        <br><span id="platform" class="tab-indent"></span>
+                        <br><span class="platform , tab-indent"></span>
                         <br>
                         <br><span class="focus">Game Engine:</span>
-                        <br><span id="engine" class="tab-indent"></span>
+                        <br><span class="engine , tab-indent"></span>
                         <br>
                         <br><span class="focus">Development Timeline:</span>
-                        <br><span id="time" class="tab-indent"></span>
+                        <br><span class="time , tab-indent"></span>
                         <br>
                         <br><span class="focus">My Role:</span>
-                        <br><span id="role" class="tab-indent"></span>
+                        <br><span class="role , tab-indent"></span>
                     </p>
                 </div>
             </div>
         </a>
-        <div id="selection"> </div>
-    </div>
+    </template>
+    <!-- #endregion -->
 
-    <!--experience-->
-    <div id="experience" style="display: none;">
-        <h1>MY EXPERIENCE</h1>
-        <div>
-            <div>
-                <img src="images/c-sharp-logo.png" alt="C# Logo">
-                <h2>C#</h2>
-                <br>
-                <p>
-                    - <span class="focus">Unity</span> Application
-                    <br>- <span class="focus">11</span> months
-                </p>
-            </div>
-            <div>
-                <img src="images/unity-logo.png" alt="Unity Logo">
-                <h2>UNITY</h2>
-                <br>
-                <p>
-                    - <span class="focus">11</span> months
-                </p>
-            </div>
-            <div style="display: none;">
-                <img src="images/javascript-logo.png" alt="Javascript Logo">
-                <h2>JAVASCRIPT</h2>
-                <br>
-                <p>
-                    - <span class="focus">3</span> weeks
-                </p>
-            </div>
-            <div style="display: none;">
-                <img src="images/css-logo.png" alt="CSS Logo">
-                <h2>CSS</h2>
-                <br>
-                <p>
-                    - <span class="focus">3</span> weeks
-                </p>
-            </div>
-            <div style="display: none;">
-                <img src="images/html5-logo.png" alt="HTML5 Logo">
-                <h2>HTML</h2>
-                <br>
-                <p>
-                    - <span class="focus">3</span> weeks
-                </p>
-            </div>
-        </div>
-    </div>
 
+    <!-- #region portfolio -->
     <div id="contact">
         <h1>CONTACT ME</h1>
         <div>
@@ -140,11 +100,12 @@
             <a href="https://www.linkedin.com/in/%E5%93%81%E5%90%88-%E9%99%88-806ba4139/" title="My LinkedIn" target="_blank"><img src="images/LI-Logo.png"></a>
         </div>
     </div>
+    <!-- #endregion -->
    
     <div class="web-background"></div>
 
 
-    <script src="scripts/changeProject.js"></script>
+    <script src="scripts/addProject.js"></script>
     <script src="scripts/typeWriterEffect.js"></script>
 </body>
 
