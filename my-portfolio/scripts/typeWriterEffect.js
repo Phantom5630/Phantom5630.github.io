@@ -1,50 +1,70 @@
-const text = ["A game development tech stream student,\nstudying under UOW Malaysia KDU.", 
-				"\n\nCurrently looking for an internship\nto fulfill graduation requirement."];
+class Paragraph
+{
+	constructor(baseText, backSpaceNum)
+	{
+		this.baseText = baseText;
+		this.backSpaceNum = backSpaceNum;
+	}
+}
+
+const paragraphs = 
+[
+	new Paragraph("A game development tech stream student,\nstudying under UOW Malaysia KDU.", 5),
+	new Paragraph(".", 0),
+	new Paragraph("\n\nWill be joining Nimbus Games\nas a Game Programmer Intern.", 0)
+];
+const typewriterElement = document.getElementById("typewriter");
 let indexChar = 0;
 let indexArr = 0;
 let startCorrection = false;
+let printedText;
 
 function typewriter() {
 	if (!startCorrection) {
-		if (indexChar < text[indexArr].length) {
-			const char = text[indexArr].charAt(indexChar);
+		const baseText = paragraphs[indexArr].baseText;
+		if (indexChar < baseText.length) {
+			const char = baseText.charAt(indexChar);
 			if (char == "\n") {
-				document.getElementById("typewriter").innerHTML += "<br>";
+				typewriterElement.innerHTML += "<br>";
 			}
 			else {
-				document.getElementById("typewriter").innerHTML += char;
+				typewriterElement.innerHTML += char;
 			}
-			indexChar++;
-			if (indexChar == text[indexArr].length) {
-				if(indexArr == 0){
-					startCorrection = true;
-				}
-				else{
-					document.getElementById("text-cursor").style.animation = "text-cursor-effect 1s infinite";
-				}
+
+			if (++indexChar == baseText.length) {
+				startCorrection = true;
+				printedText = typewriterElement.innerHTML;
+				indexChar = 0;
 			}
-			if (char == " " || char == "\n") {
-				setTimeout(typewriter, 100);
+
+			let delay = 80;
+			if (char =='.')
+			{
+				delay = 150.
 			}
-			else if (char == ".") {
-				setTimeout(typewriter, 200);
+			else if (char != ' ' && char !='\n') {
+				delay = Math.random() * 5 + 35;
 			}
-			else {
-				setTimeout(typewriter, Math.random() * 5 + 35);
-			}
+			setTimeout(typewriter, delay);
 		}
 	}
-	else if (indexArr == 0 && indexChar >= text[indexArr].length - 4) {
-		indexChar--;
-		document.getElementById("typewriter").innerHTML = document.getElementById("typewriter").innerHTML.substring(0, indexChar + 3);
-		setTimeout(typewriter, 40);
-	}
 	else {
-		document.getElementById("typewriter").innerHTML += ".";
-		indexArr = 1;
-		indexChar = 0;
-		startCorrection = false;
-		setTimeout(typewriter, 40);
+		if (paragraphs[indexArr].backSpaceNum-- > 0) {
+			indexChar++;
+			
+			typewriterElement.innerHTML = printedText.substring(0, printedText.length - indexChar);
+			setTimeout(typewriter, 40);
+		}
+		else {
+			startCorrection = false;
+			indexChar = 0;
+			if (++indexArr == paragraphs.length) {
+				document.getElementById("text-cursor").style.animation = "text-cursor-effect 1s infinite";
+			}
+			else {
+				setTimeout(typewriter, 40);
+			}
+		}
 	}
 }
 
